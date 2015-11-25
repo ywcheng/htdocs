@@ -9,6 +9,7 @@
     "require": {
         "monolog/monolog": "^1.17",
         "slim/slim": "^2.6",
-        "twig/twig": "^1.23"
+        "twig/twig": "^1.23",
+        "phpmailer/phpmailer": "^5.2"
     }
 }

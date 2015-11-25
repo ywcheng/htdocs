@@ -23,13 +23,13 @@
 			//$log->pushHandler(new StreamHandler('log/log_'.$section.'.txt', Logger::ERROR));
 			//$log->addERROR('error msg from ' . $section. '.php');
 		
-		//try if Slim works:
-		//http://localhost:8888/company.php/hello/shirts.php
-		//$app = new \Slim\Slim();
-		//$app->get('/hello/:name', function ($name) {
-		    //echo "Hello, $name";
-		//});
-		//$app->run();
+			//try if Slim works:
+			//http://localhost:8888/company.php/hello/shirts.php
+			//$app = new \Slim\Slim();
+			//$app->get('/hello/:name', function ($name) {
+			    //echo "Hello, $name";
+			//});
+			//$app->run();
 		?>
 	</div>
 </div>

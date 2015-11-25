@@ -1,7 +1,3 @@
-<?php 
-	require 'vendor/autoload.php'; 
-	date_default_timezone_set('Asia/Taipei');				
-?>
 <html>
 <head>
 	<title><?php echo $pageTitle; ?></title>
@@ -30,7 +26,7 @@
 							$output .= '"><a href="';
 							//$output .= '#';
 							$output .= $item; 
-							//$output .= '.php';
+							$output .= '.php';
 							$output .= '">';
 							$output .= ucfirst($item);
 							$output .='</a></li>';
@@ -40,12 +36,48 @@
 						<li class="shirts"><a href="shirts.php">Shirts</a></li>
 						<li class="contact"><a href="contact.php">Contact</a></li>
 				<?php	}?>
-				<li class="cart"><a href="#">Shopping Cart</a></li>
+				<li class="cart"><a  target="paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_cart&amp;business=PVEEL3VPF9UB2&amp;display=1">
+
+					Shopping Cart</a></li>
 			</ul>
 
 		</div>
 
 	</div>
+<?php 
+	require 'vendor/autoload.php'; 
+	date_default_timezone_set('Asia/Taipei');				
+?>
+<?php 
+	//redirect based on 
+//	$app = new \Slim\Slim();
+//	$app->get('/contact', function() use ($app) {
+//      $app->response->redirect('contact.php');
+//	});
+//	$app->get('/shirts', function() use ($app) {
+//      $app->response->redirect('shirts.php');
+//	});
+//
+//	$app->get('/company', function() use ($app) {
+//      $app->response->redirect('company.php');
+//	});
+//
+//	$app->get('/', function() use ($app) {
+//      //$app->response->redirect('./');
+//	});
+//
+//	$app->get('/shirt', function() use ($app) {
+//      $app->response->redirect('shirt.php');
+//	});
+//
+//	$app->run();
+
+	$log = new Monolog\Logger($section.'.php');
+
+	//nameSpacing: how to make string usage shorter
+	use Monolog\Handler\StreamHandler;
+	use Monolog\Logger;	
+?>
 
 	<div id="content">
 		
