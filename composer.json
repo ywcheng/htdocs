@@ -1,0 +1,14 @@
+{
+    "name": "root/htdocs",
+    "authors": [
+        {
+            "name": "Yueh-Wen.Cheng",
+            "email": "yuahwen.cheng@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.17",
+        "slim/slim": "^2.6",
+        "twig/twig": "^1.23"
+    }
+}

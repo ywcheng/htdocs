@@ -1,0 +1,23 @@
+
+<?php
+	$app = new \Slim\Slim();
+	$app->get('/contact', function() use ($app) {
+      $app->response->redirect('contact.php');
+	});
+	$app->get('/shirts', function() use ($app) {
+      $app->response->redirect('shirts.php');
+	});
+
+	$app->get('/company', function() use ($app) {
+      $app->response->redirect('company.php');
+	});
+
+	$app->get('/', function() use ($app) {
+      //$app->response->redirect('./');
+	});
+
+	$app->get('/shirt', function() use ($app) {
+      $app->response->redirect('shirt.php');
+	});
+	$app->run();	
+?>

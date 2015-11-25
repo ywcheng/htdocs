@@ -19,7 +19,7 @@
 	<div class="wrapper">
 			<div class="breadcrumb">
 				<a href="shirts.php">Shirts</a> &gt;
-				<?php echo $product["name"]; ?>
+				<label title="<?php echo $product["desc"] . $product["name"];?>"><?php echo $product["name"]; ?><label>
 			</div>
 			<div class="shirt-picture">
 				<span>
@@ -28,13 +28,14 @@
 			</div>
 			<div class="shirt-details">
 				<h1>
-					<span> 
-						$<?php echo $product["price"]; ?>
-					</span>
 					<?php echo $product["name"]; ?>
+					<span> 
+						<?php echo '<br/>$' . $product["price"]; ?>
+					</span>
 					<p class="note-designer">
 						All shirts are designed by Mike the Frog.
 					</p>
+
 				</h1>
 				<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
@@ -44,10 +45,9 @@
 						<tr>
 							<td>
 								<input type="hidden" name="on0" value="Size">
-								<label for="on0">Size</label>
+								<label for="os0">Size</label>
 							</td>
-						</tr>
-						<tr>
+
 							<td>
 								<select name="os0">
 									<?php foreach ($product["sizes"] as $size) { ?>
@@ -56,6 +56,20 @@
 								</select> 
 							</td>
 						</tr>
+						<?php if(isset($product["style"])) {?>
+							<tr>
+								<td>
+									<input type="hidden" name="on1" value="Style">
+									<label for="os1">Style</label>
+								</td>
+								<td>
+									<select name="os1">
+										<option value="Short Sleeve">Short Sleeve </option>
+										<option value="Long Sleeve">Long Sleeve </option>
+									</select>
+								</td>
+							</tr>
+						<?php }?>
 					</table>
 					<input type="submit" value="Add to Cart" name="submit" />
 				</form>

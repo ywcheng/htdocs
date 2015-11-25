@@ -1,7 +1,8 @@
 <?php 
-$pageTitle = "Unique T-shirts designed by a frog";
-$section = "index";
-include('inc/header.php'); 
+	$pageTitle = "Unique T-shirts designed by a frog";
+	$section = "index";
+	include('inc/header.php'); 
+	
 ?>
 
 <div class="section banner">
@@ -10,7 +11,7 @@ include('inc/header.php');
 
 		<img class="hero" src="img/mike-the-frog.png" alt="Mike the Frog says:">
 		<div class="button">
-			<a href="#">
+			<a href="shirt.php?id=102">
 				<h2>Hey, I&rsquo;m Mike!</h2>
 				<p>Check Out My Shirts</p>
 			</a>
@@ -26,29 +27,18 @@ include('inc/header.php');
 		<h2>Mike&rsquo;s Latest Shirts</h2>
 
 		<ul class="products">
-			<li><a href="#">
-				<img src="img/shirts/shirt-108.jpg">
-				<p>View Details</p>
-			</a>
-		</li><li>
-		<a href="#">
-			<img src="img/shirts/shirt-107.jpg">
-			<p>View Details</p>
-		</a>
-	</li><li>
-	<a href="#">
-		<img src="img/shirts/shirt-106.jpg">
-		<p>View Details</p>
-	</a>
-</li><li>
-<a href="#">
-	<img src="img/shirts/shirt-105.jpg">
-	<p>View Details</p>
-</a>
-</li>								
-</ul>
+			<?php 
+				include("inc/products.php");
+				$total_products = count($products);
+				$position = 0;
+				foreach($products as $product_id => $product) { 
+					$position++;
+					if($total_products - $position < 4)
+						echo get_list_view_html($product_id, $product);
+				}
+			?>				
+		</ul>
 
-</div>
-
+	</div>
 </div>
 <?php include('inc/footer.php'); ?>

@@ -16,6 +16,7 @@
 		header("Location: contact.php?status=thanks"); 
 		exit;
 	}
+	
 ?>
 <?php 
 	$pageTitle = "Contact Mike";
@@ -52,10 +53,23 @@
 					</tr>
 					<tr>
 						<th>
+							<label for="reason" >Reason for Inquiry</label>
+						</th>
+						<td>
+							<select name="reason" id="reason"> 
+								<option>-Select-</option>
+								<option>T-Shirts</option>
+								<option>Order Status</option>
+								<option>Shipping Status</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th>
 							<label for="message" >Message</label>
 						</th>
 						<td>
-							<input type="textarea" name="message" id="message"/>
+							<textarea name="message" id="message" rows="5"> </textarea>
 						</td>
 					</tr>
 				</table>

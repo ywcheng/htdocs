@@ -1,3 +1,7 @@
+<?php 
+	require 'vendor/autoload.php'; 
+	date_default_timezone_set('Asia/Taipei');				
+?>
 <html>
 <head>
 	<title><?php echo $pageTitle; ?></title>
@@ -6,7 +10,6 @@
 	<link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
-
 	<div class="header">
 
 		<div class="wrapper">
@@ -14,8 +17,29 @@
 			<h1 class="branding-title"><a href="./">Shirts 4 Mike</a></h1>
 
 			<ul class="nav">
-				<li class="shirts <?php if($section == "shirts") echo "on"; ?>"><a href="shirts.php">Shirts</a></li>
-				<li class="contact <?php if($section == "contact") echo "on"; ?>"><a href="contact.php">Contact</a></li>
+				<?php
+					if(isset($section)){
+						$items = array('shirts', 'contact', 'company');
+						$output = "";
+						foreach ($items as $item) {
+
+							$output .= '<li class="';
+							$output .= $item;
+							if($section == $item)
+								$output .= ' on';
+							$output .= '"><a href="';
+							//$output .= '#';
+							$output .= $item; 
+							//$output .= '.php';
+							$output .= '">';
+							$output .= ucfirst($item);
+							$output .='</a></li>';
+						}
+						echo $output;
+					}else{ ?>
+						<li class="shirts"><a href="shirts.php">Shirts</a></li>
+						<li class="contact"><a href="contact.php">Contact</a></li>
+				<?php	}?>
 				<li class="cart"><a href="#">Shopping Cart</a></li>
 			</ul>
 
@@ -24,3 +48,4 @@
 	</div>
 
 	<div id="content">
+		
