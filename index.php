@@ -4,7 +4,6 @@
 	include('inc/header.php'); 
 	
 ?>
-
 <div class="section banner">
 
 	<div class="wrapper">
