@@ -13,31 +13,11 @@
 			<h1 class="branding-title"><a href="/">Shirts 4 Mike</a></h1>
 
 			<ul class="nav">
-				<?php
-					if(isset($section)){
-						$items = array('shirts', 'contact', 'company');
-						$output = "";
-						foreach ($items as $item) {
+				
+				<li class="shirts"><a href="/shirts.php">Shirts</a></li>
+				<li class="contact"><a href="/contact.php">Contact</a></li>
+				<li class="contact"><a href="/company.php">Company</a></li>
 
-							$output .= '<li class="';
-							$output .= $item;
-							if($section == $item)
-								$output .= ' on';
-							$output .= '"><a href="';
-							//$output .= BASE_URL;
-							//$output .= '#';
-							$output .= $item; 
-							if($item == "shirts") $output .= "/";
-							else $output .= '.php';
-							$output .= '">';
-							$output .= ucfirst($item);
-							$output .='</a></li>';
-						}
-						echo $output;
-					}else{ ?>
-						<li class="shirts"><a href="/shirts.php">Shirts</a></li>
-						<li class="contact"><a href="/contact.php">Contact</a></li>
-				<?php	}?>
 				<li class="cart"><a  target="paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_cart&amp;business=PVEEL3VPF9UB2&amp;display=1">
 
 					Shopping Cart</a></li>

@@ -1,29 +1,37 @@
 # Teamhouse project practice starts: 
 RewriteEngine On
-
-RewriteRule ^shirts/$ /shirts/shirts.php
-RewriteRule ^shirts/([0-9]+)$ /shirts/shirt.php?id=$1
-
-RewriteRule ^receipt.php$ /recript/ [R=301]
-RewriteRule ^contact/$ /contact/contact.php [R=301]
-RewriteRule ^contact.php$ /contact/contact.php [R=301]
-RewriteRule ^shirts.php$ /shirts/ [R=301]
-
-RewriteCond %{QUERY_STRING} ^id=[0-9]+$
-RewriteRule ^shirt.php$ /shirts/%1/? [R=301]
+# RewriteRule ^[a-zA-z\s]+/shirts/$ /shirts/
+# RewriteRule ^[a-zA-z\s]+/shirts/shirts.php$ /shirts/
+# 
+# RewriteRule ^shirts/([0-9]+)/$ /shirts/shirt.php?id=$1
+# # RewriteRule ^[a-zA-z\s]+/shirts/([0-9]+)/$ /shirts/shirt.php?id=$1
+# 
+# RewriteRule ^(shirts/[0-9]+)$ /$1/ [R=301]
+# RewriteRule ^[a-zA-z\s]+/(shirts/[0-9]+)$ /$1/ [R=301]
+# 
+# 
+# RewriteRule ^receipt.php$ /recript/ [R=301]
+# 
+# RewriteRule ^[a-zA-z\s]+/contact.php$ /contact/ [R=301]
+# RewriteRule ^[a-zA-z\s]+/shirts.php$ /shirts/ [R=301]
+# RewriteRule ^[a-zA-z\s]+/company.php$ /company/company.php [R=301]
+# 
+# RewriteCond %{QUERY_STRING} ^id=[0-9]+$
+# RewriteRule ^[a-zA-z\s]+/shirt.php$ /shirts/%1/? [R=301]
 
 # Answer: 
 # RewriteEngine On
-# RewriteRule ^shirts/$ /shirts/shirts.php
-# RewriteRule ^shirts/([0-9]+)/$ /shirts/shirt.php?id=$1
-# RewriteRule ^receipt.php$ /receipt/ [R=301]
-# RewriteRule ^contact.php$ /contact/ [R=301]
-# RewriteRule ^shirts.php$ /shirts/ [R=301]
-# RewriteRule ^(shirts/[0-9]+)$ /$1/ [R=301]
-# 
-# RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
-# RewriteRule ^shirt.php$ /shirts/%1/? [R=301]
-# 
+RewriteRule ^shirts/$ /shirts/shirts.php
+RewriteRule ^shirts/([0-9]+)/$ /shirts/shirt.php?id=$1
+RewriteRule ^receipt.php$ /receipt/ [R=301]
+RewriteRule ^contact.php$ /contact/ [R=301]
+RewriteRule ^shirts.php$ /shirts/ [R=301]
+RewriteRule ^company.php$ /company/ [R=301]
+RewriteRule ^(shirts/[0-9]+)$ /$1/ [R=301]
+
+RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
+RewriteRule ^shirt.php$ /shirts/%1/? [R=301]
+
 
 # =========== dont know where the following codes come from: 
 # Some hosts may require you to use the `RewriteBase` directive.

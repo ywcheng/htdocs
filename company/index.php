@@ -1,9 +1,10 @@
-<?php include("inc/products.php") ?>
 <?php
 	$pageTitle = "Company Information"; 
 	$section = "company";
-	
-	include('inc/header.php'); 
+
+	require_once('../inc/config.php');
+	require_once (ROOT_PATH . 'inc/products.php');
+	include(ROOT_PATH . 'inc/header.php');
 ?>
 <div class="section shirts page">
 	<div class="wrapper">
@@ -35,4 +36,4 @@
 	</div>
 </div>
 
-<?php include('inc/footer.php'); ?>
+<?php include(ROOT_PATH . 'inc/footer.php'); ?>

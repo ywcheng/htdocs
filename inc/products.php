@@ -71,7 +71,7 @@ $products[101] = array(
 	);
 
 
-function get_list_view_html($product_id, $product){
+function get_list_view_html($product){
 	
 	$output = "";
 	$output .= '<li>';
@@ -83,4 +83,10 @@ function get_list_view_html($product_id, $product){
 
 	return $output;
 }
+
+foreach ($products as $product_id => $product) {
+	$products[$product_id]["sku"] = $product_id;
+}
+
+
 ?>

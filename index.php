@@ -33,7 +33,7 @@
 				foreach($products as $product_id => $product) { 
 					$position++;
 					if($total_products - $position < 4)
-						echo get_list_view_html($product_id, $product);
+						echo get_list_view_html($product);
 				}
 			?>				
 		</ul>
