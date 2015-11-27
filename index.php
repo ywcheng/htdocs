@@ -3,6 +3,7 @@
 	$section = "index";
 	include('inc/header.php'); 
 	require_once('inc/config.php');
+	include("inc/products.php");
 ?>
 <div class="section banner">
 
@@ -16,7 +17,6 @@
 			</a>
 		</div>
 	</div>
-
 </div>
 
 <div class="section shirts latest">
@@ -26,14 +26,10 @@
 		<h2>Mike&rsquo;s Latest Shirts</h2>
 
 		<ul class="products">
-			<?php 
-				include("inc/products.php");
-				$total_products = count($products);
-				$position = 0;
-				foreach($products as $product_id => $product) { 
-					$position++;
-					if($total_products - $position < 4)
-						echo get_list_view_html($product);
+			<?php 	
+				$recent = get_products_recent();
+				foreach ($recent as $value) {
+					echo get_list_view_html($value);
 				}
 			?>				
 		</ul>

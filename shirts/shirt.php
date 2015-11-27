@@ -1,7 +1,7 @@
 <?php 
 	require_once('../inc/config.php');
 	include(ROOT_PATH . "inc/products.php");
-	include(ROOT_PATH . "inc/header.php");
+	$products = get_products_all();
 
 	if(isset($_GET["id"])){
 		$produdct_id = $_GET["id"];
@@ -16,6 +16,9 @@
 
 	$section = "shirts";
 	$pageTitle = $product["name"];
+	
+	//this line can't be beofre exit(header("Location: " . BASE_URL . "shirts.php"));
+	include(ROOT_PATH . "inc/header.php");
 ?>
 
 <div class="section page">

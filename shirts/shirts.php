@@ -10,13 +10,13 @@
 		<h1>Mike's Full Catalog of Shirts</h1>
 		<ul class="products ">
 			<?php 
-				foreach($products as $product_id => $product) { 
-					echo get_list_view_html($product);
+				$all = get_products_all();
+				foreach ($all as $value) {
+					echo get_list_view_html($value);
 				}
 			?>
 		</ul>
 	</div>
-	
 </div>
 
 <?php include(ROOT_PATH . 'inc/footer.php'); ?>
