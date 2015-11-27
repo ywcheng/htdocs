@@ -2,6 +2,7 @@
 <?php
 	$pageTitle = "Company Information"; 
 	$section = "company";
+	
 	include('inc/header.php'); 
 ?>
 <div class="section shirts page">

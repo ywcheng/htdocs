@@ -2,13 +2,13 @@
 	$pageTitle = "Unique T-shirts designed by a frog";
 	$section = "index";
 	include('inc/header.php'); 
-	
+	require_once('inc/config.php');
 ?>
 <div class="section banner">
 
 	<div class="wrapper">
 
-		<img class="hero" src="img/mike-the-frog.png" alt="Mike the Frog says:">
+		<img class="hero" src="/img/mike-the-frog.png" alt="Mike the Frog says:">
 		<div class="button">
 			<a href="shirt.php?id=102">
 				<h2>Hey, I&rsquo;m Mike!</h2>

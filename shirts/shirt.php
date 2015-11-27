@@ -1,4 +1,8 @@
-<?php include("inc/products.php");
+<?php 
+	require_once('../inc/config.php');
+	include(ROOT_PATH . "inc/products.php");
+	include(ROOT_PATH . "inc/header.php");
+
 	if(isset($_GET["id"])){
 		$produdct_id = $_GET["id"];
 		if (isset($products[$produdct_id])) {
@@ -7,23 +11,22 @@
 	}
 
 	if(!isset($product)) {
-		exit(header("Location: shirts.php"));
+		exit(header("Location: " . BASE_URL . "shirts.php"));
 	}
 
 	$section = "shirts";
 	$pageTitle = $product["name"];
-	include("inc/header.php");
 ?>
 
 <div class="section page">
 	<div class="wrapper">
 			<div class="breadcrumb">
-				<a href="shirts.php">Shirts</a> &gt;
+				<a href="<?php echo BASE_URL; ?>shirts/">Shirts</a> &gt;
 				<label title="<?php echo $product["desc"] . $product["name"];?>"><?php echo $product["name"]; ?><label>
 			</div>
 			<div class="shirt-picture">
 				<span>
-					<img src="<?php echo $product["img"]; ?>" alt="<?php echo $product["name"]; ?>"/>
+					<img src="<?php echo BASE_URL . $product["img"]; ?>" alt="<?php echo $product["name"]; ?>"/>
 				</span>
 			</div>
 			<div class="shirt-details">
@@ -77,5 +80,5 @@
 	</div>
 </div>
 <?php
-	include ('inc/footer.php');
+	include (ROOT_PATH . 'inc/footer.php');
 ?>

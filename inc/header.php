@@ -27,7 +27,8 @@
 							//$output .= BASE_URL;
 							//$output .= '#';
 							$output .= $item; 
-							$output .= '.php';
+							if($item == "shirts") $output .= "/";
+							else $output .= '.php';
 							$output .= '">';
 							$output .= ucfirst($item);
 							$output .='</a></li>';

@@ -1,4 +1,9 @@
 <?php 
+	$pageTitle = "Contact Mike";
+	$section = "contact";
+	require_once('../inc/config.php');
+	require_once (ROOT_PATH . 'inc/products.php');
+	include(ROOT_PATH . 'inc/header.php');
 
 	$error_messages = [];
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -108,10 +113,6 @@
 	        } 
 		}
 	}
-	
-	$pageTitle = "Contact Mike";
-	$section = "contact";
-	include('inc/header.php'); 	
 ?>
 	<div class="section page">
 
@@ -187,4 +188,4 @@
 			</form>
 		<?php } ?>
 	</div>
-<?php include('inc/footer.php'); ?>
+<?php include(ROOT_PATH . 'inc/footer.php'); ?>
