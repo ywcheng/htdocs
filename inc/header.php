@@ -10,7 +10,7 @@
 
 		<div class="wrapper">
 
-			<h1 class="branding-title"><a href="./">Shirts 4 Mike</a></h1>
+			<h1 class="branding-title"><a href="/">Shirts 4 Mike</a></h1>
 
 			<ul class="nav">
 				<?php
@@ -23,7 +23,8 @@
 							$output .= $item;
 							if($section == $item)
 								$output .= ' on';
-							$output .= '"><a href="/';
+							$output .= '"><a href="';
+							//$output .= BASE_URL;
 							//$output .= '#';
 							$output .= $item; 
 							$output .= '.php';
