@@ -3,7 +3,7 @@
 	$section = "company";
 
 	require_once('../inc/config.php');
-	require_once (ROOT_PATH . 'inc/products.php');
+	require_once(ROOT_PATH . 'inc/products.php');
 	include(ROOT_PATH . 'inc/header.php');
 ?>
 <div class="section shirts page">

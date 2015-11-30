@@ -13,6 +13,18 @@ function get_list_view_html($product){
 	return $output;
 }
 
+function get_products_search($searchTerm){
+	$results = array();
+	$all = get_products_all();
+	foreach ($all as $product) {
+		if(false){
+			//$results[] = $product;
+		}
+	}
+
+	return $results;
+}
+
 function get_products_recent(){
 	$recent = array();
 	$all = get_products_all();		
