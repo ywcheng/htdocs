@@ -25,7 +25,7 @@ function get_products_search($searchTerm){
 
 		if(stripos($product["name"], $searchTerm) !== false){
 			$results[] = $product;
-		}else if(is_int(intval($searchTerm)) && stripos($product_id, $searchTerm) !== false){
+		}else if(stripos($product_id, $searchTerm) !== false){
 			$results[] = $product;
 		}
 	}
