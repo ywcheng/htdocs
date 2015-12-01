@@ -1,5 +1,24 @@
 <?php
 
+function get_products_count(){
+    return count(get_products_all());
+}
+
+function get_products_subset($positionStart, $positionEnd){
+    $subset = array();
+    $all = get_products_all();
+
+    $position = 0;
+    foreach ($all as $value) {
+        $position ++;
+        if($position <= $positionEnd && $position >= $positionStart){
+            $subset[] = $value;
+        }
+    }
+
+    return $subset;
+}
+
 function get_list_view_html($product){
 	
 	$output = "";
@@ -13,6 +32,11 @@ function get_list_view_html($product){
 	return $output;
 }
 
+/*
+ * Loops through all the products, looking for a search term in the products names 
+ * Argument: string    $searchTerm    the search term
+ * Return:   array                    a list of products that contain the search term in their names
+*/
 function get_products_search($searchTerm){
 	$results = array();
 	$all = get_products_all();
